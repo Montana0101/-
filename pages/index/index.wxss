@@ -1,0 +1,148 @@
+.container {
+  height: 100%;
+  padding: 0;
+}
+
+/* home */
+.home {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 100rpx;
+  padding-top: 100rpx;
+}
+
+/* home页遮罩 */
+.home_mask {
+  background: #759c9210;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 首页内容区域 */
+.home_content {
+  /* border:1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* home页面底部 */
+.home_footer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: rgba(81, 123, 201, 0.4)
+}
+
+.home_footer_view {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 250rpx;
+  /* border:1px solid red; */
+  /* justify-content: center;
+  align-items: center; */
+  font-size: 26rpx;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.home_footer_view:not(:last-of-type) {
+  border-right: 4rpx solid rgb(143, 146, 136,0.7);
+  margin: 25rpx 0;
+}
+
+/* 个人资料页面 */
+.profile{
+  flex:1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_upper{
+  flex:4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_photo{
+  height:200rpx;
+  width:200rpx;
+  border-radius: 100rpx;
+  margin-bottom: 50rpx;
+  overflow: hidden;
+}
+
+.profile_nickname{
+  font-size:30rpx;
+}
+
+.profile_lower{
+  flex:5;
+  /* background:rgba(81, 123, 201, 0.3); */
+}
+
+.profile_lower_col{
+   height:100rpx;
+   background:rgba(1,1,1,0.1);
+   display: flex;
+   align-items: center;
+   /* padding:0rpx 100rpx; */
+   justify-content: space-between;
+}
+
+.profile_lower_col_key{
+  flex:1;
+  /* background:red; */
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_lower_col_btn{
+  flex:1;
+  /* background:yellowgreen; */
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 底部导航 */
+.footer {
+  height: 100rpx;
+  background: #66699790;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer_view {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: white;
+  height: 100%;
+}
+
+/* 首页底部一周天气 */
+.home_footer_row {}

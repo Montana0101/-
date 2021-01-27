@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='home' wx:if="{{pageInx===0}}" bindtap="_watchPageTouch">
+    <image src="https://mini-weather.oss-cn-shanghai.aliyuncs.com/background/init.jpg" style="position:absolute;top:0;right:0;bottom:0;left:0;height:100%;width:100%;z-index:-1"/>
+    <view class='home_mask'></view>
+    <view class='home_content'>
+      <view style="font-size:50rpx;color:white;font-weight:bold">
+        {{weatherInfo.city?weatherInfo.city:weatherInfo.province}}
+      </view>
+      <view style="font-size:150rpx;color:white;font-weight:bold;margin-left:20rpx">
+        {{weatherInfo.realdata.airTempreture}}°
+      </view>
+      <view style="font-size:50rpx;color:white;font-weight:bold">
+        {{weatherInfo.realdata.weather}}
+      </view>
+      <view style="font-size:40rpx;color:white;font-weight:bold;margin-top:30rpx">
+        {{weatherInfo.realdata.windDirection}} /    {{weatherInfo.realdata.windForce}}
+      </view>
+      <!-- <view style="font-size:30rpx;color:white;font-weight:bold">
+         湿度：{{realdata.humidity}}
+      </view> -->
+    </view>
+
+    <view class='home_footer'>
+      <block wx:for="{{weatherInfo.weekend}}" wx:key="index">
+        <view class='home_footer_view'>
+          <view>{{item.month}}/{{item.date}}</view>
+          <view>{{item.day.airTempreture}}-{{item.night.airTempreture}}</view>
+          <view>{{item.day.weather}}-{{item.night.weather}}</view>
+          <!-- <view>{{item.direct}}</view> -->
+        </view>
+      </block>
+    </view>
+  </view>
+
+    <!-- 我的模块 -->
+  <view class='profile' wx:elif="{{pageInx==1}}">
+    <view class='profile_upper'>
+      <!-- <image bindtap="bindViewTap" class="profile_photo" src="{{userInfo.wechat_photo}}" mode="cover"></image> -->
+      <!-- <text class="userinfo-nickname" class="profile_nickname" >{{userInfo.wechat_name}}</text>     -->
+     <view class="profile_photo">
+      <open-data type="userAvatarUrl"></open-data>
+     </view> 
+      <open-data type="userNickName"></open-data>
+    </view>
+    <view class='profile_lower'>
+      <view class='profile_lower_col'>
+        <view class='profile_lower_col_key'>更改城市</view>
+        <!-- 城市选择 -->
+        <picker class='profile_lower_col_btn' mode="region" bindcancel="cancelRegion" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{usercity ? usercity : region[1]}}
+          </view>
+         </picker>
+      </view>
+    </view>  
+  </view>
+
+  <!-- 底部导航栏 -->
+  <view class='footer' style="" bindtap="_changeTab" wx:if="{{true}}">
+    <view class='footer_view' data-index='0'>首页</view>
+    <view class='footer_view' data-index='1'>我的</view>
+  </view>
+</view>
